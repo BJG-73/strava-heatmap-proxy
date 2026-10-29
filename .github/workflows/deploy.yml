@@ -24,7 +24,7 @@ jobs:
       - name: Deploy worker
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           wranglerVersion: "4"
           command: deploy
@@ -35,7 +35,7 @@ jobs:
       - name: Upload secrets and redeploy
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           wranglerVersion: "4"
           command: deploy
@@ -43,5 +43,5 @@ jobs:
             STRAVA_ID
             STRAVA_SESSION
         env:
-          STRAVA_ID: ${{ secrets.STRAVA_ID }}
+          STRAVA_ID: ${{ secrets.STRAVA_ATHLETE_ID }}
           STRAVA_SESSION: ${{ secrets.STRAVA_SESSION }}
